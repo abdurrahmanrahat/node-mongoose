@@ -19,8 +19,17 @@ const getFoodFromDb = async (id: string) => {
   return result;
 };
 
+// put/:id
+const updateFoodIntoDb = async (id: string, updatedFood: Food) => {
+  const result = await FoodModel.findByIdAndUpdate(id, updatedFood, {
+    new: true,
+  });
+  return result;
+};
+
 export const FoodServices = {
   createFoodInfoDb,
   getAllFoodsFromDb,
   getFoodFromDb,
+  updateFoodIntoDb,
 };

@@ -49,8 +49,26 @@ const getFood = async (req: Request, res: Response) => {
   }
 };
 
+// update method
+const updateFood = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const updatedFoodData = req.body;
+
+    const result = await FoodServices.updateFoodIntoDb(id, updatedFoodData);
+    res.status(200).json({
+      success: true,
+      message: 'Food updated successfully',
+      data: result,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const FoodControllers = {
   createFood,
   getAllFoods,
   getFood,
+  updateFood,
 };

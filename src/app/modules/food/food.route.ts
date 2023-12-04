@@ -12,4 +12,7 @@ router.get('/', FoodControllers.getAllFoods);
 // get/:id route
 router.get('/:id', FoodControllers.getFood);
 
+// put/:id route
+router.put('/:id', FoodControllers.updateFood);
+
 export const FoodRoutes = router;
