@@ -27,9 +27,16 @@ const updateFoodIntoDb = async (id: string, updatedFood: Food) => {
   return result;
 };
 
+// delete/:id
+const deleteFoodByIdIntoDb = async (id: string) => {
+  const result = await FoodModel.findByIdAndDelete(id);
+  return result;
+};
+
 export const FoodServices = {
   createFoodInfoDb,
   getAllFoodsFromDb,
   getFoodFromDb,
   updateFoodIntoDb,
+  deleteFoodByIdIntoDb,
 };

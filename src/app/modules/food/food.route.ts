@@ -15,4 +15,7 @@ router.get('/:id', FoodControllers.getFood);
 // put/:id route
 router.put('/:id', FoodControllers.updateFood);
 
+// delete/:id route
+router.delete('/:id', FoodControllers.deleteFoodById);
+
 export const FoodRoutes = router;

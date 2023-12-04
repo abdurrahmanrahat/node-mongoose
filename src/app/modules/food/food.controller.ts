@@ -4,7 +4,7 @@ import { FoodServices } from './food.service';
 // post food creation
 const createFood = async (req: Request, res: Response) => {
   try {
-    const food = req.body.food;
+    const food = req.body;
 
     // will call service function to send data
     const result = await FoodServices.createFoodInfoDb(food);
@@ -66,9 +66,25 @@ const updateFood = async (req: Request, res: Response) => {
   }
 };
 
+// delete method
+const deleteFoodById = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const result = await FoodServices.deleteFoodByIdIntoDb(id);
+    res.status(200).json({
+      success: true,
+      message: 'Food deleted successfully',
+      data: result,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const FoodControllers = {
   createFood,
   getAllFoods,
   getFood,
   updateFood,
+  deleteFoodById,
 };
