@@ -6,4 +6,7 @@ const router = express.Router();
 // post
 router.post('/create-food', FoodControllers.createFood);
 
+// get
+router.get('/', FoodControllers.getAllFoods);
+
 export const FoodRoutes = router;

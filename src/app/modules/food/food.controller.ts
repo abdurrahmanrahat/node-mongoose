@@ -20,6 +20,21 @@ const createFood = async (req: Request, res: Response) => {
   }
 };
 
+// get foods method
+const getAllFoods = async (req: Request, res: Response) => {
+  try {
+    const result = await FoodServices.getAllFoodsFromDb();
+    res.status(200).json({
+      success: true,
+      message: 'Foods retrieved successfully',
+      data: result,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const FoodControllers = {
   createFood,
+  getAllFoods,
 };

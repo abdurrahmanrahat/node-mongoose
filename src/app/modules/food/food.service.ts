@@ -7,6 +7,13 @@ const createFoodInfoDb = async (food: Food) => {
   return result;
 };
 
+// get
+const getAllFoodsFromDb = async () => {
+  const result = await FoodModel.find();
+  return result;
+};
+
 export const FoodServices = {
   createFoodInfoDb,
+  getAllFoodsFromDb,
 };
