@@ -13,7 +13,14 @@ const getAllFoodsFromDb = async () => {
   return result;
 };
 
+// get/:id
+const getFoodFromDb = async (id: string) => {
+  const result = await FoodModel.findById(id);
+  return result;
+};
+
 export const FoodServices = {
   createFoodInfoDb,
   getAllFoodsFromDb,
+  getFoodFromDb,
 };

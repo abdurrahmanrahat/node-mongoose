@@ -34,7 +34,23 @@ const getAllFoods = async (req: Request, res: Response) => {
   }
 };
 
+// get a food
+const getFood = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const result = await FoodServices.getFoodFromDb(id);
+    res.status(200).json({
+      success: true,
+      message: 'A food retrieved successfully',
+      data: result,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const FoodControllers = {
   createFood,
   getAllFoods,
+  getFood,
 };

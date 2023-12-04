@@ -9,4 +9,7 @@ router.post('/create-food', FoodControllers.createFood);
 // get
 router.get('/', FoodControllers.getAllFoods);
 
+// get/:id route
+router.get('/:id', FoodControllers.getFood);
+
 export const FoodRoutes = router;
