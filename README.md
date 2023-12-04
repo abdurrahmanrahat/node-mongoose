@@ -2,7 +2,7 @@
 
 I used this server Modular Software Design Pattern code.
 
-To run the project in development / locally, use the script in your local command.
+To run the project in development / locally, use the script in your local command. (note: put your .env file for DATABASE_URL and PORT access)
 
 ```
 npm run start:dev
