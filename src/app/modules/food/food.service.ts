@@ -7,6 +7,6 @@ const createFoodInfoDb = async (food: Food) => {
   return result;
 };
 
-export const foodServices = {
+export const FoodServices = {
   createFoodInfoDb,
 };
